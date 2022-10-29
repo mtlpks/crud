@@ -8,7 +8,7 @@ os.chdir('C:\\Users\\Matheus\\Github\\repos\\crud')
 conn = mysql.connector.connect(
     host='localhost',
     user='root',
-    password='Mla205766*'
+    password='********'
 )
 cur = conn.cursor(buffered=True)
 
@@ -18,7 +18,7 @@ cur.execute("""CREATE DATABASE CRUD""")
 conn = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Mla205766*",
+    password="********",
     database="CRUD"
 )
 curr = conn.cursor()
@@ -67,9 +67,3 @@ def delete(opcao, value_to_delete):
     if opcao == 2:
         curr.execute("DELETE FROM produto WHERE idMarca = (SELECT idMarca FROM marca WHERE %s = nomeMarca)", (value_to_delete, ))
         curr.execute("DELETE FROM marca WHERE nomeMarca = %s", (value_to_delete, ))
-create('Meia', 'Lupo', 8, 13)
-create('Calcinha', 'Lupo', 8, 12)
-read(3)
-update(1, 'Meia', 'Cueca')
-read(3)
-
